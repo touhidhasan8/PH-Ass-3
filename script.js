@@ -160,6 +160,21 @@ let filteredItems = document.getElementById("filtered-items");
 
 function renderInterview() {
   filteredItems.innerHTML = "";
+
+  if (interviewList.length === 0) {
+    const noJob = document.createElement("p");
+
+    noJob.innerHTML = `<div class="text-center mt-5">
+          <div class="flex justify-center">
+            <img src="./img/jobs.png" alt="" />
+          </div>
+          <p class="text-xl">No jobs available</p>
+          <p class="text-gray-500">Check back soon for new job opportunities</p>
+        </div>`;
+    filteredItems.appendChild(noJob);
+    return;
+  }
+
   for (const items of interviewList) {
     let div = document.createElement("div");
     div.innerHTML = ` <div class="card bg-base-100 w-full shadow-sm mt-5 space-y-5">
@@ -189,6 +204,19 @@ function renderInterview() {
 }
 function renderReject() {
   filteredItems.innerHTML = "";
+  if (interviewList.length === 0) {
+    const noJob = document.createElement("p");
+
+    noJob.innerHTML = `<div class="text-center mt-5">
+          <div class="flex justify-center">
+            <img src="./img/jobs.png" alt="" />
+          </div>
+          <p class="text-xl">No jobs available</p>
+          <p class="text-gray-500">Check back soon for new job opportunities</p>
+        </div>`;
+    filteredItems.appendChild(noJob);
+    return;
+  }
   for (const reject of rejectedList) {
     let div = document.createElement("div");
     div.innerHTML = ` <div class="card bg-base-100 w-full shadow-sm mt-5 space-y-5">
