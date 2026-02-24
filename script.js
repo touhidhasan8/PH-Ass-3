@@ -204,7 +204,7 @@ function renderInterview() {
 }
 function renderReject() {
   filteredItems.innerHTML = "";
-  if (interviewList.length === 0) {
+  if (rejectedList.length === 0) {
     const noJob = document.createElement("p");
 
     noJob.innerHTML = `<div class="text-center mt-5">
